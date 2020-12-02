@@ -33,7 +33,7 @@ pub fn main() {
           done = 1;
           break;
         }
-        if ref1 + ref2 + elt3 > 2020 {
+        if ref1 + ref2 + elt3 > YEAR {
           break;
         }
       }
@@ -41,7 +41,7 @@ pub fn main() {
         break;
       }
     }
-    if ref1 >= 1010 || done == 1{
+    if ref1 >= YEAR/2 || done == 1{
     }
   }
   println!("Step 3 done!");
