@@ -40,8 +40,10 @@ pub fn main() {
   let mut valid : i32 = 0;
   for (i, passwd) in passwd_vec.iter().enumerate() {
     let policy: Policy = policy_vec[i].clone();
-    if policy.min <= passwd.matches(&policy.letter.clone()).count() && 
-        policy.max >= passwd.matches(&policy.letter.clone()).count() {
+    let passwd_chars : Vec<char> = passwd.clone().chars().collect();
+    let letter : Vec<char> = policy.letter.clone().chars().collect();
+    if (passwd_chars[policy.min] == letter[0]) ^
+       (passwd_chars[policy.max] == letter[0]) {
       valid += 1;
     }
   }
